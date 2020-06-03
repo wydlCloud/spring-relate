@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="designpattern" />
+        <module name="spring-transfer-iocxml" />
+        <module name="spring-transfer-ioc-anno" />
+        <module name="spring-transfer-ioc-xml-anno" />
+        <module name="spring-transfer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="designpattern" target="8" />
+      <module name="spring-transfer" target="8" />
+      <module name="spring-transfer-ioc-anno" target="8" />
+      <module name="spring-transfer-ioc-xml-anno" target="8" />
+      <module name="spring-transfer-iocxml" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

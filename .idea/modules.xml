@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/designpattern/designpattern.iml" filepath="$PROJECT_DIR$/designpattern/designpattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-relate.iml" filepath="$PROJECT_DIR$/.idea/spring-relate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-transfer/spring-transfer.iml" filepath="$PROJECT_DIR$/spring-transfer/spring-transfer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-transfer-ioc-anno/spring-transfer-ioc-anno.iml" filepath="$PROJECT_DIR$/spring-transfer-ioc-anno/spring-transfer-ioc-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-transfer-ioc-xml-anno/spring-transfer-ioc-xml-anno.iml" filepath="$PROJECT_DIR$/spring-transfer-ioc-xml-anno/spring-transfer-ioc-xml-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-transfer-iocxml/spring-transfer-iocxml.iml" filepath="$PROJECT_DIR$/spring-transfer-iocxml/spring-transfer-iocxml.iml" />
     </modules>
   </component>
 </project>
