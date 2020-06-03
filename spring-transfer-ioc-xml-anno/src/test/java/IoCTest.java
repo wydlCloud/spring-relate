@@ -66,5 +66,15 @@ public class IoCTest {
         transferService.transfer("6029621011000","6029621011001",100);
     }
 
+    /**
+     * 测试xml-anno aop
+     */
+    @Test
+    public void testAnnoAop() throws Exception {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        TransferService transferService = applicationContext.getBean(TransferService.class);
+        transferService.transfer("6029621011000","6029621011001",100);
+    }
+
 
 }

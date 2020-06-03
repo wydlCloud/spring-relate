@@ -3,20 +3,22 @@ package com.wy.transferIocAnnoXml.utils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 /**
  * @author wy
  */
-//@Component
-//@Aspect
+@Component
+@Aspect
+@EnableAspectJAutoProxy
 public class LogUtils {
 
-//
-//    @Pointcut("execution(* com.wy.transferIocAnnoXml.service.impl.TransferServiceImpl.*(..))")
-//    public void pt1(){
-//
-//    }
+
+    @Pointcut("execution(* com.wy.transferIocAnnoXml.service.impl.TransferServiceImpl.*(..))")
+    public void pt1(){
+
+    }
 
 
     /**
@@ -60,6 +62,7 @@ public class LogUtils {
      * 环绕通知
      *
      */
+    @Around("pt1()")
     public Object arroundMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("环绕通知中的beforemethod....");
 
