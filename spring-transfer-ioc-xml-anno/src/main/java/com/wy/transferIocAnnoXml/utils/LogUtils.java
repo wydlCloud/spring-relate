@@ -8,21 +8,20 @@ import org.springframework.stereotype.Component;
 /**
  * @author wy
  */
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class LogUtils {
 
-
-    @Pointcut("execution(* com.wy.transferIocAnnoXml.service.impl.TransferServiceImpl.*(..))")
-    public void pt1(){
-
-    }
+//
+//    @Pointcut("execution(* com.wy.transferIocAnnoXml.service.impl.TransferServiceImpl.*(..))")
+//    public void pt1(){
+//
+//    }
 
 
     /**
      * 业务逻辑开始之前执行
      */
-    @Before("pt1()")
     public void beforeMethod(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
         for (int i = 0; i < args.length; i++) {
@@ -36,7 +35,6 @@ public class LogUtils {
     /**
      * 业务逻辑结束时执行（无论异常与否）
      */
-    @After("pt1()")
     public void afterMethod() {
         System.out.println("业务逻辑结束时执行，无论异常与否都执行.......");
     }
@@ -45,7 +43,6 @@ public class LogUtils {
     /**
      * 异常时时执行
      */
-    @AfterThrowing("pt1()")
     public void exceptionMethod() {
         System.out.println("异常时执行.......");
     }
@@ -54,7 +51,6 @@ public class LogUtils {
     /**
      * 业务逻辑正常时执行
      */
-    @AfterReturning(value = "pt1()",returning = "retVal")
     public void successMethod(Object retVal) {
         System.out.println("业务逻辑正常时执行.......");
     }
@@ -64,7 +60,6 @@ public class LogUtils {
      * 环绕通知
      *
      */
-    /*@Around("pt1()")*/
     public Object arroundMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("环绕通知中的beforemethod....");
 

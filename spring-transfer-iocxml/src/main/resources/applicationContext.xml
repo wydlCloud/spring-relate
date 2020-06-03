@@ -108,7 +108,7 @@
     <!--lazy-init默认为false立即加载-->
     <bean id="accountPojo" class="com.spring.transferiocxml.pojo.Account" lazy-init="true"/>
     <bean id="accountBean" class="com.spring.transferiocxml.factory.AccountFactoryBean">
-        <property name="accountInfo" value="wy,100000,中国"></property>
+        <property name="accountInfo" value="wy,100000,wy"></property>
     </bean>
 
 

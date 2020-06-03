@@ -5,7 +5,7 @@ import org.springframework.beans.factory.FactoryBean;
 
 /**
  * @author wy
- * @company wy(中国)网络科技
+ * @company wy(wy)网络科技
  * @Classname CompanyFactoryBean
  *
  * BeanFactory 接口是容器的顶级接口，定义了容器的一些基础行为，负责生产和管理bean的一个工厂，具体使用它下面的子接口类型，
