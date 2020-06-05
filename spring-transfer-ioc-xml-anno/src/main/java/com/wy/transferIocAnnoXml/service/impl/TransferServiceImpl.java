@@ -63,4 +63,9 @@ public class TransferServiceImpl implements TransferService {
 
 
     }
+
+    @Override
+    public void success(String fromCardNo, String toCardNo) {
+        System.out.println("success");
+    }
 }

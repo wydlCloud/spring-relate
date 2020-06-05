@@ -7,7 +7,10 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import sun.misc.ProxyGenerator;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -43,7 +46,7 @@ public class ProxyFactory {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         Object result = null;
-
+                        addClassToDisk(obj.getClass().getName(),obj.getClass(),"/Users/wy/project/spring-relate/spring-transfer-ioc-anno/src/main/java/com/wy/iocanno/servlet");
                         try{
                             // 开启事务(关闭事务的自动提交)
                             transactionManager.beginTransaction();
@@ -69,7 +72,31 @@ public class ProxyFactory {
 
     }
 
-
+    /**
+     * 用于生产代理对象的字节码，并将其保存到硬盘上
+     * @param className
+     * @param cl
+     * @param path
+     */
+    private static void addClassToDisk(String className, Class<?> cl, String path) {
+        //用于生产代理对象的字节码
+        byte[] classFile = ProxyGenerator.generateProxyClass(className, cl.getInterfaces());
+        FileOutputStream out = null;
+        try {
+            out = new FileOutputStream(path);
+            //将代理对象的class字节码写到硬盘上
+            out.write(classFile);
+            out.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     /**
      * 使用cglib动态代理生成代理对象
      * @param obj 委托对象
